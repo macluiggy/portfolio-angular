@@ -7,7 +7,7 @@ import { InfoPagina } from '../interfaces/info-pagina.interface';
 })
 export class InfoPaginaService {
 
-  info!: InfoPagina;
+  info: InfoPagina = {}
   loading = false;
 
   constructor(private http: HttpClient) {
