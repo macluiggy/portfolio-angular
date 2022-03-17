@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { InfoPagina } from '../interfaces/info-pagina.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InfoPaginaService {
 
-  info: any = {};
+  info!: InfoPagina;
   loading = false;
 
   constructor(private http: HttpClient) {
     console.log('info pagina service');
     this.http
-      .get('assets/data/data-pagina.json')
+      .get<InfoPagina>('assets/data/data-pagina.json')
       .subscribe((resp) => {
         this.loading = true;
         this.info = resp;
