@@ -47,7 +47,7 @@
     <p>espere pof favor</p>
   </div>
 
-  <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+  <div *ngIf="!productoService.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
     <a [routerLink]="['/item', producto.cod]"
       *ngFor="let producto of productoService.productos"
       
