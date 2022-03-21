@@ -20,7 +20,7 @@ export class ProductosService {
         'https://angular-html-3686c-default-rtdb.firebaseio.com/productos_idx.json'
       )
       .subscribe((resp) => {
-        console.log(resp);
+        // console.log(resp);
         this.productos = resp;
         setTimeout(() => {
           this.cargando = false;

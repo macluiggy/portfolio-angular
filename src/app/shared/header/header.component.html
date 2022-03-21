@@ -17,28 +17,31 @@
     </h1>
     <nav class="rk-navigation">
       <ul class="rk-menu">
-        <li routerLinkActive="active" class=" rk-menu__item">
+        <li routerLinkActive="active" class="rk-menu__item">
           <!-- activa la clase 'active' dependiendo de la ruta actual -->
           <a routerLink="home" class="rk-menu__link">Home</a>
         </li>
-        
+
         <li routerLinkActive="active" class="rk-menu__item">
           <a routerLink="/about" class="rk-menu__link">About</a>
         </li>
       </ul>
-      <form class="rk-search">
+      <div class="rk-search">
         <input
           type="text"
           placeholder="Search"
           id="urku-search"
           class="rk-search-field"
+          (keyup.enter)="buscarProducto(txtBuscar.value)"
+          #txtBuscar
         />
+        <!-- #txtBuscar es una referencia a la etiqueta input, osea para enlazar valor del input a esa variable -->
         <label for="urku-search">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-search"></use>
           </svg>
         </label>
-      </form>
+      </div>
     </nav>
   </div>
 </header>
